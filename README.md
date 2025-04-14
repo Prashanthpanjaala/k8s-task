@@ -32,7 +32,7 @@ You interact with the cluster using kubectl, just like you would with a cloud-ho
 
 
 
-Great question — especially when diving into Kubernetes!
+
 
 ### 🚀 What is `kubectl`?
 
