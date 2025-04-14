@@ -87,6 +87,79 @@ Run that container anywhere — your laptop, a server, the cloud — with consis
 
 
 
+
+---
+
+### 🔧 Command Syntax:
+
+```bash
+kubectl scale deployment <deployment-name> --replicas=<number-of-pods>
+```
+
+---
+
+### 🧪 Example:
+
+Let’s say you have a deployment called `nginx-deployment`, and you want to scale it to 5 pods:
+
+```bash
+kubectl scale deployment nginx-deployment --replicas=5
+```
+
+This tells Kubernetes:  
+> “Hey, I want **5 pods** running for this deployment.”
+
+---
+
+### ✅ How to Verify:
+
+After scaling, you can check if the pods were created successfully:
+
+```bash
+kubectl get pods
+```
+
+Or see the status of the deployment:
+
+```bash
+kubectl get deployment nginx-deployment
+```
+
+---
+
+### 🔁 Bonus: Scale Down
+
+To scale back down to, say, 2 pods:
+
+```bash
+kubectl scale deployment nginx-deployment --replicas=2
+```
+
+---
+
+### 🧠 Tip:
+
+Scaling this way is **imperative**, meaning it changes things on the fly.  
+For a more **declarative** approach (preferred in CI/CD), you’d update your YAML file like this:
+
+```yaml
+spec:
+  replicas: 5
+```
+
+Then apply it:
+
+```bash
+kubectl apply -f deployment.yaml
+```
+
+---
+
+
+
+
+
+
 ![Screenshot (109)](https://github.com/user-attachments/assets/a5132c6f-3d5c-4e39-b4a3-7eb5dc1c9c1b)
 
 
